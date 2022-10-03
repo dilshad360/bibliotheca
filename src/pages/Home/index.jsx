@@ -3,17 +3,17 @@ import Airtable from "airtable";
 import { useEffect } from "react";
 import BlogCard from "../../components/BlogCard/BlogCard";
 import Loader from "../../components/Loader/Loader";
+import backendUrl from "../../const/backendUrl";
 
-const base = new Airtable({ apiKey: "keyIFFzaIXD9tzQwH" }).base(
-  "appeS7JqbqChh9tHv"
-);
+
+const base = new Airtable({ apiKey: `${backendUrl.secretKey}` }).base(`${backendUrl.airtableBase}`);
 
 function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     base("Table 1")
-      .select({ view: "Grid view" })
+      .select({ view: "Published" })
       .eachPage((records, fetchNextPage) => {
         setPosts(records);
         fetchNextPage();
@@ -22,7 +22,6 @@ function Home() {
 
   return (
     <div>
-      <h1>Writer Blog</h1>
       {posts.length ? (
         <div>
           {posts.map((post) => (
