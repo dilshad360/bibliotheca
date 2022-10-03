@@ -14,6 +14,10 @@ function Blog() {
   const [post, setPost] = useState();
 
   useEffect(() => {
+   getPost()
+  },);
+
+  const getPost = async() => {
     base("Table 1").find(`${params.id}`, (err, record) => {
       if (err) {
         console.error(err);
@@ -21,7 +25,7 @@ function Blog() {
       }
       setPost(record.fields);
     });
-  }, [params.id]);
+  }
 
   return (
     <main className={styles.blog}>

@@ -12,13 +12,17 @@ function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    getPosts() 
+  }, []);
+
+  const getPosts = async () => {
     base("Table 1")
       .select({ view: "Published" })
       .eachPage((records, fetchNextPage) => {
         setPosts(records);
         fetchNextPage();
       });
-  }, []);
+  }
 
   return (
     <div>

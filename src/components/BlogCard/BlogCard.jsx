@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import moment from "moment";
 
+
 function BlogCard({ post, id }) {
   return (
     <Link to={`/blog/${id}`}>
@@ -26,6 +27,7 @@ function BlogCard({ post, id }) {
             <div className={styles.date}>
               <h3>{moment(post.datePublished).format("MMM d, YYYY")}</h3>
             </div>
+            {post.fields.tag && <h6>{post.fields.tag}</h6> }
           </div>
         </div>
         <div className={styles.imgContainer}>
