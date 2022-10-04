@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./styles.module.css";
 
 function About() {
   return (
-    <div>
+    <div className={styles.about}>
       <p>
         What if there exist an ideal opportunity to hightlight the intangible
         thoughts linering in your mind?

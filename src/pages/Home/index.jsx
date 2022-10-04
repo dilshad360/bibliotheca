@@ -5,24 +5,33 @@ import BlogCard from "../../components/BlogCard/BlogCard";
 import Loader from "../../components/Loader/Loader";
 import backendUrl from "../../const/backendUrl";
 
-
-const base = new Airtable({ apiKey: `${backendUrl.secretKey}` }).base(`${backendUrl.airtableBase}`);
+const base = new Airtable({ apiKey: `${backendUrl.secretKey}` }).base(
+  `${backendUrl.airtableBase}`
+);
 
 function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    getPosts() 
+    getPosts();
   }, []);
 
   const getPosts = async () => {
     base("Table 1")
       .select({ view: "Published" })
-      .eachPage((records, fetchNextPage) => {
-        setPosts(records);
-        fetchNextPage();
-      });
-  }
+      .eachPage(
+        (records, fetchNextPage) => {
+          setPosts(records);
+          fetchNextPage();
+        },
+        function done(err) {
+          if (err) {
+            console.error(err);
+            return;
+          }
+        }
+      );
+  };
 
   return (
     <div>
@@ -33,7 +42,7 @@ function Home() {
           ))}
         </div>
       ) : (
-        <Loader/>
+        <Loader />
       )}
     </div>
   );
