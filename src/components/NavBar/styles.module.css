@@ -1,0 +1,27 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav ul li{
+ margin: 1em;
+ font-size: 15px;
+ font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+ font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 0rem 1rem;
+  }
+}

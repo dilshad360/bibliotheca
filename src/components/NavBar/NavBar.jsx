@@ -1,9 +1,16 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+import styles from "./styles.module.css"
 
 function NavBar() {
   return (
-    <nav>
-        <h1>Bibliotheca</h1>
+    <nav className={styles.nav}>
+        <Link to={`/`}><h1>Bibliotheca</h1></Link>
+        <ul>
+        <Link to={`/about`}><li>About</li></Link>
+        <a href='https://airtable.com/shrLDbv7qBXp7t4a0' target="_blank" rel="noreferrer" ><li>Write</li></a>
+        </ul>
+      
     </nav>
   )
 }

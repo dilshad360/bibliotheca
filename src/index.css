@@ -10,13 +10,6 @@ body {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-
 h1 {
   font-size: 1.5rem;
 }
@@ -55,8 +48,5 @@ a {
 @media screen and (max-width: 768px) {
   body {
     margin: 0% 0%;
-  }
-  nav {
-    padding: 3rem 0rem;
   }
 }
