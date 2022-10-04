@@ -1,22 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import noProfile from "../../assets/no_profile.jpg"
 import moment from "moment";
 
 
 function BlogCard({ post, id }) {
   return (
-    <Link to={`/blog/${id}`}>
+    <Link to={`/Bibliotheca/blog/${id}`}>
       <div className={styles.card}>
         <div>
           <div className={styles.author}>
             {post.fields.authorPhoto ? (
               <img src={post.fields.authorPhoto[0].url} alt="" />
             ) : (
-              <img
-                src="https://i.pinimg.com/736x/2a/40/6b/2a406bf58db22cc7818ad1ff48c158cf.jpg"
-                alt=""
-              />
+              <img src={noProfile} alt=""/>
             )}
             <h3>{post.fields.author}</h3>
           </div>

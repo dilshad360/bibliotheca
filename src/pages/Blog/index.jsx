@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
 import moment from "moment";
 import Loader from "../../components/Loader/Loader";
 import backendUrl from "../../const/backendUrl";
+import noProfile from "../../assets/no_profile.jpg";
 
 const base = new Airtable({ apiKey: `${backendUrl.secretKey}` }).base(`${backendUrl.airtableBase}`);
 
@@ -38,7 +39,7 @@ function Blog() {
                 <img src={post.authorPhoto[0].url} alt="" />
               ) : (
                 <img
-                  src="https://i.pinimg.com/736x/2a/40/6b/2a406bf58db22cc7818ad1ff48c158cf.jpg"
+                  src={noProfile}
                   alt=""
                 />
               )}

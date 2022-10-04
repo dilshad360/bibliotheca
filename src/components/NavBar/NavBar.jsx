@@ -5,9 +5,9 @@ import styles from "./styles.module.css"
 function NavBar() {
   return (
     <nav className={styles.nav}>
-        <Link to={`/`}><h1>Bibliotheca</h1></Link>
+        <Link to={`/bibliotheca`}><h1>Bibliotheca</h1></Link>
         <ul>
-        <Link to={`/about`}><li>About</li></Link>
+        <Link to={`/bibliotheca/about`}><li>About</li></Link>
         <a href='https://airtable.com/shrLDbv7qBXp7t4a0' target="_blank" rel="noreferrer" ><li>Write</li></a>
         </ul>
       
