@@ -7,7 +7,7 @@ import moment from "moment";
 
 function BlogCard({ post, id }) {
   return (
-    <Link to={`/Bibliotheca/blog/${id}`}>
+    <Link to={`/blog/${id}`}>
       <div className={styles.card}>
         <div>
           <div className={styles.author}>
