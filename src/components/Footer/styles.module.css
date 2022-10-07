@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2em;
+    padding: 3rem 2rem 2rem 2rem;
 }
 .footerLogo{
     width: 10em;

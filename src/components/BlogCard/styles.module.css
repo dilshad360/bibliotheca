@@ -1,87 +1,73 @@
 .card {
-    margin-top: 0.5rem;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-  }
-  
-  .card h2 {
-    cursor: pointer;
-    padding: 0.5rem 0rem;
-    font-size: 0.8em;
-    color: #292929;
-  }
-  
-  .card h3 {
-    font-size: 0.6em;
-    font-weight: lighter;
-    color: #757575;
-  }
-  
-  .imgContainer img {
-    position: relative;
-    max-width: 25vh;
-    height: 25vh;
-  }
-  
-  .card img:hover {
-    opacity: 0.8;
-  }
-  
-  .card img {
-    object-fit: cover;
-    cursor: pointer;
-    transition: all 0.5s ease;
-  }
-  
-  .details {
-    display: flex;
-    align-items: center;
-    margin: 0.5rem 0rem;
-  }
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 1rem 0 1rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 15px 20px 40px rgba(161, 161, 161, 0.4);
+}
+.card h2 {
+  padding: 0.5rem 0rem;
+  font-size: 1.1rem;
+}
+.card h3 {
+  font-size: 0.8rem;
+}
 
-  .details h6{
-    margin-left: 0.6em;
-    font-size: 12px;
-    color: rgba(117, 117, 117, 1);
-    background-color: rgba(242, 242, 242, 1);
-    padding: 0.2em 0.5em 0.2em 0.5em;
-    border-radius: 1em;
+.imgContainer img {
+  position: relative;
+  width: 100%;
+  height: 25vh;
+}
+
+.card img:hover {
+  opacity: 0.8;
+}
+
+.card img {
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 0rem;
+}
+
+.text {
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text h6{
+  width: fit-content;
+  font-size: 12px;
+  color: rgba(117, 117, 117, 1);
+  background-color: rgba(242, 242, 242, 1);
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-radius: 1em;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+.author img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    margin: 1rem 2rem;
   }
-  
   .text {
-    margin-top: 1rem;
+    padding: 1rem 1.5rem;
   }
-  
-  .author {
-    display: flex;
-    align-items: center;
-  }
-  
-  .author img {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    margin-right: 0.5rem;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .card {
-      margin: 0rem 0.5rem;
-    }
-    .imgContainer {
-      display: flex;
-      align-items: center;
-    }
-  
-    .imgContainer img {
-      position: relative;
-      width: 12vh;
-      height: 12vh;
-      /* margin: 0.5em; */
-    }
-    .card h2 {
-      font-size: 0.9em;
-    }
-  }
+}

@@ -50,7 +50,6 @@ function Blog() {
             </div>
             <h2>{post.title}</h2>
           </div>
-
           <div className={styles.content} dangerouslySetInnerHTML={{ __html: post.content }} ></div>
         </div>
       ) : (

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import BlogCard from "../../components/BlogCard/BlogCard";
 import Loader from "../../components/Loader/Loader";
 import backendUrl from "../../const/backendUrl";
+import styles from "./styles.module.css";
 
 const base = new Airtable({ apiKey: `${backendUrl.secretKey}` }).base(
   `${backendUrl.airtableBase}`
@@ -36,7 +37,7 @@ function Home() {
   return (
     <div>
       {posts.length ? (
-        <div>
+        <div className={styles.main}>
           {posts.map((post) => (
             <BlogCard key={post.id} id={post.id} post={post} />
           ))}
