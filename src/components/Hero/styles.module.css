@@ -5,3 +5,11 @@
     font-size: 48px;
     margin: 1rem 0 1rem 0;
 }
+@media screen and (max-width: 768px) {
+    .mainHeader {
+      font-size: 40px;
+    }
+    .hero{
+        padding: 0 1em 0 1em;
+    }
+  }
