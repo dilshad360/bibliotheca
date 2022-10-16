@@ -1,5 +1,6 @@
 .blog {
  margin: 1em 0em;
+ padding: 0 10em 0 10rem;
 }
 
 .title {
@@ -56,6 +57,7 @@
   @media screen and (max-width: 768px) {
     .blog {
       margin: 1rem 2rem;
+      padding: 0;
     }
     .content {
       width: 100%;

@@ -5,6 +5,7 @@ import BlogCard from "../../components/BlogCard/BlogCard";
 import Loader from "../../components/Loader/Loader";
 import backendUrl from "../../const/backendUrl";
 import styles from "./styles.module.css";
+import Hero from "../../components/Hero/Hero";
 
 const base = new Airtable({ apiKey: `${backendUrl.secretKey}` }).base(
   `${backendUrl.airtableBase}`
@@ -36,6 +37,7 @@ function Home() {
 
   return (
     <div>
+      <Hero/>
       {posts.length ? (
         <div className={styles.main}>
           {posts.map((post) => (
