@@ -28,6 +28,12 @@
   border-radius: 12px;
   object-fit: cover;
   height: 90%;
+  transition: all 0.5s ease;
+}
+
+
+.book :hover{
+    opacity: 0.8;
 }
 
 .book h5 {

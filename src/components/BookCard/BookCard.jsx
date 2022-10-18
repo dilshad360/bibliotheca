@@ -12,8 +12,6 @@ function BookCard() {
 
   const [books, setBooks] = useState([]);
 
-  console.log(books.length)
-
   useEffect(() => {
     getBooks();
   }, []);
@@ -43,7 +41,7 @@ function BookCard() {
         {books.length ? (
           <ul className={styles.books}>
             {books.map((book) => (
-              <li className={styles.book}>
+              <li className={styles.book} key={book.id}>
                 <img
                   src={book.fields.coverPhoto[0].url}
                   alt={book.fields.title}
