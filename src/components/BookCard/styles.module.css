@@ -1,0 +1,50 @@
+.main {
+  margin: 6em 0 6em 0;
+  max-width: 1400px;
+}
+.books {
+  display: flex;
+  padding: 25px 0px;
+  list-style: none;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+.book {
+  margin: 0 0.5em 0 0.5em;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 100%;
+  padding: 10px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+  scroll-snap-align: start;
+  transition: all 0.2s;
+  max-width: 15%;
+  cursor: pointer;
+}
+
+.book img {
+  border-radius: 12px;
+  object-fit: cover;
+  height: 90%;
+}
+
+.book h5 {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 6px;
+}
+
+.books::-webkit-scrollbar {
+    display: none;
+  }
+
+@media screen and (max-width: 768px) {
+  .main {
+    margin: 6em 1em 6em 1em;
+  }
+  .book {
+    max-width: 40%;
+  }
+}

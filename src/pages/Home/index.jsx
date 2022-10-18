@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Airtable from "airtable";
-import { useEffect } from "react";
 import BlogCard from "../../components/BlogCard/BlogCard";
 import Loader from "../../components/Loader/Loader";
 import backendUrl from "../../const/backendUrl";
 import styles from "./styles.module.css";
 import Hero from "../../components/Hero/Hero";
+import BookCard from "../../components/BookCard/BookCard";
 
 const base = new Airtable({ apiKey: `${backendUrl.secretKey}` }).base(
   `${backendUrl.airtableBase}`
@@ -19,7 +19,7 @@ function Home() {
   }, []);
 
   const getPosts = async () => {
-    base("Table 1")
+    base("Blog")
       .select({ view: "Published" })
       .eachPage(
         (records, fetchNextPage) => {
@@ -46,7 +46,8 @@ function Home() {
         </div>
       ) : (
         <Loader />
-      )}
+        )}
+        <BookCard/>
     </div>
   );
 }

@@ -19,7 +19,7 @@ function Blog() {
   },);
 
   const getPost = async() => {
-    base("Table 1").find(`${params.id}`, (err, record) => {
+    base("Blog").find(`${params.id}`, (err, record) => {
       if (err) {
         console.error(err);
         return;
