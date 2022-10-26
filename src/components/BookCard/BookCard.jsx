@@ -46,7 +46,7 @@ function BookCard() {
                   className={styles.bookCover}
                   src={book.fields.coverPhoto[0].url}
                   alt={book.fields.title}
-                  onClick={() => {navigate(`/about/${book.id}`)}}
+                  onClick={() => {navigate(`/book/${book.id}`)}}
                   />
               {/* <h5>{book.fields.title}</h5> */}
             </li>
