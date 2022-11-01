@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className={styles.footer}>
         <a href='https://connectemea.in/'><img className={styles.footerLogo} src={connectLogo} alt=''></img></a>
-        <span>Crafted with 🧡 by ConnectEMEA</span>
+        <span>Crafted with 🧡 by <a href='https://connectemea.in/'>ConnectEMEA</a></span>
     </footer>
   )
 }
