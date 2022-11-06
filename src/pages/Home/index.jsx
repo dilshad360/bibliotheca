@@ -38,8 +38,10 @@ function Home() {
   return (
     <div>
       <Hero/>
+      <div className={styles.main}>
+      <h2 className={styles.title}>Posts</h2>
       {posts.length ? (
-        <div className={styles.main}>
+        <div className={styles.posts}>
           {posts.map((post) => (
             <BlogCard key={post.id} id={post.id} post={post} />
           ))}
@@ -47,6 +49,7 @@ function Home() {
       ) : (
         <Loader />
         )}
+        </div>
         <BookCard/>
     </div>
   );

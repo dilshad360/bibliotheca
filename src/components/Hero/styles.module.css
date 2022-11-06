@@ -1,13 +1,41 @@
-.hero{
-    margin: 5rem 0 5rem 0;
+
+.hero {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0 0 6rem;
+	height: 50vh;
+	background: linear-gradient(45deg, rgba(255,175,189,.7), rgba(100,216,243,.7), rgba(234,236,198,.7), rgba(245,146,176,.7), rgba(52,219,216,.7)) 0 0 / 1000% no-repeat, 0 0 / cover no-repeat;
+	-webkit-animation: gradientAnimation 40s ease infinite;
+	animation: gradientAnimation 40s ease infinite;
 }
-.mainHeader{
-    font-size: 48px;
-    margin: 1rem 0 1rem 0;
+@-webkit-keyframes gradientAnimation {
+	0%   { background-position: 0% 30%, 0 0;}
+	50%  { background-position: 100% 70%, 0 0;}
+	100% { background-position: 0% 30%, 0 0;}
 }
+@keyframes gradientAnimation {
+	0%   { background-position: 0% 30%, 0 0;}
+	50%  { background-position: 100% 70%, 0 0;}
+	100% { background-position: 0% 30%, 0 0;}
+}
+h1 {
+	position: absolute;
+	color: rgb(37, 37, 37);
+	font : normal 600 45px/1 'Open Sans', sans-serif;
+	text-align: left;
+}
+h1 span {
+	display: block;
+	margin-top: 1em;
+	font-size: 26px;
+	font-weight: 400;
+    color: rgb(37, 37, 37);
+}
+
 @media screen and (max-width: 768px) {
-    .mainHeader {
-      font-size: 40px;
+    h1 span {
+        font-size: 18px;
     }
     .hero{
         padding: 0 1em 0 1em;

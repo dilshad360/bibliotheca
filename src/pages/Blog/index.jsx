@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 import moment from "moment";
 import Loader from "../../components/Loader/Loader";
 import backendUrl from "../../const/backendUrl";
-import noProfile from "../../assets/no_profile.jpg";
+// import noProfile from "../../assets/no_profile.jpg";
 
 const base = new Airtable({ apiKey: `${backendUrl.secretKey}` }).base(
   `${backendUrl.airtableBase}`
@@ -37,11 +37,11 @@ function Blog() {
           <img src={post.coverPhoto[0].url} className={styles.cover} alt="" />
           <div className={styles.title}>
             <div className={styles.authdetails}>
-              {post.authorPhoto ? (
+              {/* {post.authorPhoto ? (
                 <img src={post.authorPhoto[0].url} alt="" />
               ) : (
                 <img src={noProfile} alt="" />
-              )}
+              )} */}
               <div className={styles.authtext}>
                 <h4>{post.author}</h4>
                 <h6>{moment(post.date_published).format("MMM d, YYYY")}</h6>

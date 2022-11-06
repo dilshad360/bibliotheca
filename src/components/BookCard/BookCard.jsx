@@ -37,7 +37,7 @@ function BookCard() {
 
   return (
     <div className={styles.main}>
-      <h1>Books</h1>
+      <h2>Books</h2>
       {books.length ? (
         <ul className={styles.books}>
           {books.map((book) => (

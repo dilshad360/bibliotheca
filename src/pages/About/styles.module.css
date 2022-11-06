@@ -1,3 +1,7 @@
+.about {
+  margin: 0 10% 0 10%;
+}
+
 .quote {
   display: flex;
   justify-content: center;
@@ -45,6 +49,7 @@
 @media screen and (max-width: 768px) {
   .about {
     padding: 3em 1em;
+    margin: 0;
   }
   .quote blockquote {
     font-size: 1.4rem;
