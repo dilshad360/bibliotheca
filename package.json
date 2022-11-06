@@ -1,6 +1,6 @@
 {
-  "homepage": "http://mohameddilshad.in/bibliotheca/",
-  "name": "writers-blog",
+  "homepage": "http://bibliotheca.mohameddilshad.in/",
+  "name": "bibliotheca",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
