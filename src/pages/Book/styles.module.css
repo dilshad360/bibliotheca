@@ -1,0 +1,28 @@
+.main {
+  margin: 5% 10%;
+}
+.book {
+  display: flex;
+}
+.book img {
+  margin: 0 2rem;
+}
+.details h2 {
+  font-size: 36px;
+}
+.details h5 {
+  font-size: 18px;
+  margin-top: 3px;
+  color: rgb(91, 91, 91);
+}
+
+@media screen and (max-width: 768px) {
+    .book{
+        display: flex;
+        flex-direction: column;
+    }
+    .details h2{
+        font-size: 30px;
+        margin-top: 1rem;
+    }
+}

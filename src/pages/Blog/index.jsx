@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import Airtable from "airtable";
-import { useEffect } from "react";
 import { useParams } from "react-router";
 import styles from "./styles.module.css";
 import moment from "moment";

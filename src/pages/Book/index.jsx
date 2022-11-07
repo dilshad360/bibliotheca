@@ -1,13 +1,48 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import Airtable from "airtable";
+import backendUrl from "../../const/backendUrl";
+import Loader from "../../components/Loader/Loader";
+import styles from "./styles.module.css";
 
-function Blog() {
+const base = new Airtable({ apiKey: `${backendUrl.secretKey}` }).base(
+  `${backendUrl.airtableBase}`
+);
+
+function Book() {
+  const params = useParams();
+  const [book, setBook] = useState();
+
+  useEffect(() => {
+    getBook();
+  });
+
+  const getBook = async () => {
+    base("Book").find(`${params.id}`, (err, record) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      setBook(record.fields);
+    });
+  };
+
   return (
-    <div>
-      <center>
-      <img src='https://i.pinimg.com/originals/05/76/e5/0576e51d371dbdbfd9857a4524269e3b.jpg' width="250px" alt='' />
-      </center>
+    <div className={styles.main}>
+      {book ? (
+        <div className={styles.book}>
+          <img src={book.coverPhoto[0].url} className="" alt="" />
+          <div className={styles.details}>
+            <h2>{book.title}</h2>
+            <h5>Author: {book.author}</h5>
+            <p>{book.content}</p>
+          </div>
+        </div>
+      ) : (
+        <Loader />
+      )}
     </div>
-  )
+  );
 }
 
-export default Blog
+export default Book;

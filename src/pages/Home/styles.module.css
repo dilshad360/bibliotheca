@@ -8,6 +8,10 @@
     grid-gap: 0.5rem;
 }
 
+.posts BlogCard :hover{
+    background-color: black;
+}
+
 @media screen and (max-width: 768px) {
     .main {
         margin: 2rem 0 0 0;
