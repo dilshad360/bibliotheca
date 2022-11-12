@@ -9,7 +9,7 @@ function NavBar() {
         <Link to={`/`}><img className={styles.logo} src={logo} alt="" /></Link>
         <ul>
         <Link to={`/about`}><li>About</li></Link>
-        <a href='https://airtable.com/shrLDbv7qBXp7t4a0' target="_blank" rel="noreferrer" ><li>Write</li></a>
+        <Link to={`/write`}><li>Write</li></Link>
         </ul>
     </nav>
   )

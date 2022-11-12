@@ -55,7 +55,7 @@ function Write() {
     );
   };
 
-  const notifySuccess = () => toast.success("Thank You ✌");
+  const notifySuccess = () => toast.success("Thanks for being awesome! ✌");
   const notifyError = () => toast.error("Something Went Wrong 😢");
 
   const clearForm = () => {
