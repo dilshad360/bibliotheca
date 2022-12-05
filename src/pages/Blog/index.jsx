@@ -42,7 +42,7 @@ function Blog() {
                 <img src={noProfile} alt="" />
               )} */}
               <div className={styles.authtext}>
-                <h4>{post.author}</h4>
+                <h4>{post.name}</h4>
                 <h6>{moment(post.date_published).format("MMM d, YYYY")}</h6>
               </div>
             </div>
