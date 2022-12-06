@@ -5,7 +5,8 @@ function Hero() {
   return (
     <div className={styles.hero}>
       <h1>
-      Stay curious.<span>Discover stories, thinking, and expertise from writers on any topic</span>
+        <span>Get ready</span>
+      Let's dive into edebiyat
       </h1>
     </div>
   );

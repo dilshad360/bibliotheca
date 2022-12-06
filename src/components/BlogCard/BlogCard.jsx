@@ -9,10 +9,12 @@ function BlogCard({ post, id }) {
     <Link to={`/blog/${id}`}>
       <div className={styles.card}>
         <div className={styles.imgContainer}>
+          {post.fields.coverPhoto && 
           <img
             src={post.fields.coverPhoto[0].thumbnails.large.url}
             alt=""
           />
+          }
         </div>
         <div className={styles.text}>
           {/* {post.fields.tag && <h6>{post.fields.tag}</h6> } */}

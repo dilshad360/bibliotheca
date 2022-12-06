@@ -1,9 +1,10 @@
 
+
 .hero {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 0 0 6rem;
+    padding: 0 8rem 0 8rem;
 	height: 50vh;
 	background: linear-gradient(45deg, rgba(160,211,238,.7), rgba(100,216,243,.7), rgba(250,251,253,.7), rgba(218,206,246,.7), rgba(216,212,247,.7)) 0 0 / 1000% no-repeat, 0 0 / cover no-repeat;
 	-webkit-animation: gradientAnimation 40s ease infinite;
@@ -20,24 +21,30 @@
 	100% { background-position: 0% 30%, 0 0;}
 }
 h1 {
+	font-family: 'Comforter', cursive;
+	font-size: 100px;
+	font-weight: 400;
 	position: absolute;
 	color: rgb(37, 37, 37);
-	font : normal 600 45px/1 'Open Sans', sans-serif;
 	text-align: left;
 }
 h1 span {
+	font-family: 'Nanum Brush Script', cursive;
 	display: block;
-	margin-top: 1em;
-	font-size: 26px;
+	font-size: 36px;
 	font-weight: 400;
     color: rgb(37, 37, 37);
 }
 
 @media screen and (max-width: 768px) {
     h1 span {
-        font-size: 18px;
+        font-size: 26px;
+    }
+	h1  {
+        font-size: 50px;
     }
     .hero{
         padding: 0 1em 0 1em;
+		height: 26vh;
     }
   }

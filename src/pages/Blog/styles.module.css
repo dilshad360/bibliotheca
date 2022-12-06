@@ -1,6 +1,6 @@
 .blog {
  margin: 1em 0em;
- padding: 0 10em 0 10rem;
+ padding: 0 24em 0 24rem;
 }
 
 .title {
@@ -10,7 +10,7 @@
   .title h2 {
     padding-top: 1rem;
     padding-bottom: 2rem;
-    font-size: 32px;
+    font-size: 42px;
   }
   
   .authdetails {

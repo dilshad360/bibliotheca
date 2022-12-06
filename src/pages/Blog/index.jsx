@@ -33,7 +33,8 @@ function Blog() {
     <main className={styles.blog}>
       {post ? (
         <div>
-          <img src={post.coverPhoto[0].url} className={styles.cover} alt="" />
+          {post.coverPhoto && <img src={post.coverPhoto[0].url} className={styles.cover} alt="" /> }
+          
           <div className={styles.title}>
             <div className={styles.authdetails}>
               {/* {post.authorPhoto ? (
