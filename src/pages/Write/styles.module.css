@@ -14,7 +14,7 @@ label{
     color: #484848;
 }
 
-input , textarea{
+input , textarea, select{
     margin: 1em 0 1em 0;
     padding: 7px;
     border-radius: 6px;

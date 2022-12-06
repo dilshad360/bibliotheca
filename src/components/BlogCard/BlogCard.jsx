@@ -24,7 +24,7 @@ function BlogCard({ post, id }) {
               ) : (
                 <img src={noProfile} alt="" />
               )} */}
-              <h3>{post.fields.name}</h3>
+              <h3>{post.fields.author}</h3>
             </div>
             <div className={styles.date}>
               <h3>{moment(post.fields.date_published).format("MMM d, YYYY")}</h3>

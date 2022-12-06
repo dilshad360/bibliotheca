@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import Airtable from "airtable";
 import backendUrl from "../../const/backendUrl";
+import department from "../../const/departmentList";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -17,6 +18,8 @@ function Write() {
     author: "",
     email: "",
     phone: "",
+    department: "",
+    year: ""
   });
 
   const handleTitle = (e) => {
@@ -33,6 +36,12 @@ function Write() {
   };
   const handlePhone = (e) => {
     setValues({ ...values, phone: e.target.value });
+  };
+  const handleDepartment = (e) => {
+    setValues({ ...values, department: e.target.value });
+  };
+  const handleYear = (e) => {
+    setValues({ ...values, year: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -88,6 +97,20 @@ function Write() {
           onChange={handleAuthor}
           required
         />
+        <label>Department</label>
+        <select value={values.department} onChange={handleDepartment}>
+          <option>Select your department</option>
+          {department.map((dept) => (
+            <option value={dept.value}>{dept.value}</option>
+          ))}
+        </select>
+        <label>Year</label>
+        <select value={values.year} onChange={handleYear}>
+          <option>Select your year</option>
+          <option value="1st">1st</option>
+          <option value="2nd">2nd</option>
+          <option value="3rd">3rd</option>
+        </select>
         <label>Email</label>
         <input
           type="email"
