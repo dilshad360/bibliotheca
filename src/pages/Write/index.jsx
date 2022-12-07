@@ -79,11 +79,8 @@ function Write() {
     toolbar: [
       ["bold", "italic", "underline", "strike"], // toggled buttons
       [{ align: [] }],
-      [{ header: 2 }], // custom button values
       [{ list: "ordered" }, { list: "bullet" }],
       [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
-      [{ direction: "rtl" }], // text direction
-      ["clean"],
     ],
   };
 

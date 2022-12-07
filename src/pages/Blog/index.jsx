@@ -44,7 +44,7 @@ function Blog() {
               )} */}
               <div className={styles.authtext}>
                 <h4>{post.author}</h4>
-                <h6>{moment(post.date_published).format("MMM d, YYYY")}</h6>
+                <h6>{moment(post.date_created).format("MMM d, YYYY")}</h6>
               </div>
             </div>
             <h2>{post.title}</h2>
