@@ -7,6 +7,9 @@ import department from "../../const/departmentList";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
 const base = new Airtable({ apiKey: `${backendUrl.secretKey}` }).base(
   `${backendUrl.airtableBase}`
 );
@@ -19,14 +22,17 @@ function Write() {
     email: "",
     phone: "",
     department: "",
-    year: ""
+    year: "",
   });
+
+  const [contentEmpty, setcontentEmpty] = useState(false)
 
   const handleTitle = (e) => {
     setValues({ ...values, title: e.target.value });
   };
   const handleContent = (e) => {
-    setValues({ ...values, content: e.target.value });
+    setValues({ ...values, content: e });
+    setcontentEmpty(false)
   };
   const handleAuthor = (e) => {
     setValues({ ...values, author: e.target.value });
@@ -46,6 +52,11 @@ function Write() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(!values.content|| values.content==="<p><br></p>"){
+      setcontentEmpty(true)
+      notifyWarning();
+      return;
+    }
     base("Blog").create(
       [
         {
@@ -64,31 +75,39 @@ function Write() {
     );
   };
 
+  const modules = {
+    toolbar: [
+      ["bold", "italic", "underline", "strike"], // toggled buttons
+      [{ align: [] }],
+      [{ header: 2 }], // custom button values
+      [{ list: "ordered" }, { list: "bullet" }],
+      [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+      [{ direction: "rtl" }], // text direction
+      ["clean"],
+    ],
+  };
+
   const notifySuccess = () => toast.success("Thanks for being awesome! ✌");
-  const notifyError = () => toast.error("Something Went Wrong 😢");
+  const notifyWarning = () => toast.warning("You forgot something! 🙁");
+  const notifyError = () => toast.error("Something went wrong 😢");
 
   const clearForm = () => {
-    setValues({ ...values, title: "", content: "", author: "", email: "", phone:"" });
+    setValues({
+      ...values,
+      title: "", 
+      // content: "\n",
+      author: "",
+      department: "",
+      year: "",
+      email: "",
+      phone: "",
+    });
+    // console.log(values)
   };
 
   return (
     <div className={styles.main}>
       <form onSubmit={handleSubmit}>
-        <label>Title</label>
-        <input
-          type="text"
-          placeholder="Title of your post"
-          value={values.title}
-          onChange={handleTitle}
-          required
-        />
-        <label>Content</label>
-        <textarea
-          rows="6"
-          value={values.content}
-          onChange={handleContent}
-          required
-        ></textarea>
         <label>Author</label>
         <input
           type="text"
@@ -98,19 +117,21 @@ function Write() {
           required
         />
         <label>Department</label>
-        <select value={values.department} onChange={handleDepartment}>
+        <select value={values.department} onChange={handleDepartment} required>
           <option>Select your department</option>
           {department.map((dept) => (
-            <option value={dept.value}>{dept.value}</option>
+            <option value={dept.value} key={dept.value} >{dept.value}</option>
           ))}
         </select>
-        <label>Year</label>
-        <select value={values.year} onChange={handleYear}>
-          <option>Select your year</option>
-          <option value="1st">1st</option>
-          <option value="2nd">2nd</option>
-          <option value="3rd">3rd</option>
-        </select>
+        <label>Join year</label>
+        <input
+          type="text"
+          placeholder="Enter college joining year"
+          value={values.year}
+          onChange={handleYear}
+          required
+          maxLength="4"
+        />
         <label>Email</label>
         <input
           type="email"
@@ -126,6 +147,23 @@ function Write() {
           value={values.phone}
           onChange={handlePhone}
           required
+        />
+         <label>Title</label>
+        <input
+          type="text"
+          placeholder="Title of your post"
+          value={values.title}
+          onChange={handleTitle}
+          required
+        />
+        <label>Content</label>
+        {contentEmpty && <p className={styles.contentEmpty}>You forgot to enter the content</p>}
+        <ReactQuill
+          className={styles.editor}
+          modules={modules}
+          value={values.content}
+          onChange={handleContent}
+          theme="snow"
         />
         <button type="submit" className={styles.submitBtn}>
           Submit
