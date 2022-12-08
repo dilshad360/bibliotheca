@@ -16,7 +16,7 @@
   flex: 0 0 100%;
   padding: 3px;
   background: var(--white);
-  border-radius: 12px;
+  border-radius: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.377);
   /* box-shadow: 0 5px 15px rgba(0, 0, 0, 15%); */
   scroll-snap-align: start;
@@ -26,7 +26,7 @@
 }
 
 .bookCover {
-  border-radius: 12px;
+  border-radius: 1rem;
   object-fit: cover;
   height: 100%;
   transition: all 0.5s ease;
