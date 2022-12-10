@@ -41,7 +41,7 @@ function BookCard() {
       {books.length ? (
         <ul className={styles.books}>
           {books.map((book) => (
-            <li  key={book.id} className={styles.book}  onCLick={() => {navigate("/about")}} >
+            <li  key={book.id} className={styles.book}>
                 <img
                   className={styles.bookCover}
                   src={book.fields.coverPhoto[0].url}
