@@ -35,7 +35,9 @@ function Book() {
           <div className={styles.details}>
             <h2>{book.title}</h2>
             <h5><span>Author:</span> {book.author}</h5>
-            <p>{book.content}</p>
+            <p
+            dangerouslySetInnerHTML={{ __html: book.content }}
+            ></p>
           </div>
         </div>
       ) : (

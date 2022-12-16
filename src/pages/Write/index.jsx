@@ -23,6 +23,7 @@ function Write() {
     phone: "",
     department: "",
     year: "",
+    status: "NEW"
   });
 
   const [contentEmpty, setcontentEmpty] = useState(false)
