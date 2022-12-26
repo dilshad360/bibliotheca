@@ -19,10 +19,17 @@ function BookCard() {
   }, []);
 
   const getBooks = async () => {
-    base("Book")
+
+    const check = sessionStorage.getItem('books');
+
+    if (check) {
+      setBooks(JSON.parse(check));
+    } else {
+      base("Book")
       .select({ view: "Published" })
       .eachPage(
         (records, fetchNextPage) => {
+          sessionStorage.setItem("books", JSON.stringify(records));
           setBooks(records);
           fetchNextPage();
         },
@@ -33,6 +40,7 @@ function BookCard() {
           }
         }
       );
+    }
   };
 
   return (

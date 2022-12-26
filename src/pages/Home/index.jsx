@@ -19,10 +19,18 @@ function Home() {
   }, []);
 
   const getPosts = async () => {
-    base("Blog")
+
+    const check = sessionStorage.getItem('posts');
+
+    if (check) {
+      setPosts(JSON.parse(check));
+    } else {
+
+      base("Blog")
       .select({ view: "Published" })
       .eachPage(
         (records, fetchNextPage) => {
+          sessionStorage.setItem("posts", JSON.stringify(records));
           setPosts(records);
           fetchNextPage();
         },
@@ -33,6 +41,11 @@ function Home() {
           }
         }
       );
+
+      
+
+    }
+
   };
 
   return (
