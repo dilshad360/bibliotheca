@@ -30,7 +30,7 @@
   .authdetails h6 {
     font-weight: normal;
     color: rgb(91, 91, 91);
-    margin-top: 4px;
+    margin-block: 4px;
     font-size: 16px;
   }
   
@@ -53,6 +53,14 @@
   background-color: rgba(242, 242, 242, 1);
   padding: 0.2em 0.5em 0.2em 0.5em;
   border-radius: 1em;
+  }
+
+  .details{
+    display: flex;
+  }
+
+  .details div{
+    margin-left: 8px;
   }
 
   

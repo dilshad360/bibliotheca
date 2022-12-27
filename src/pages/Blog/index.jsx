@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Airtable from "airtable";
 import { useParams } from "react-router";
 import styles from "./styles.module.css";
@@ -33,8 +33,10 @@ function Blog() {
     <main className={styles.blog}>
       {post ? (
         <div>
-          {post.coverPhoto && <img src={post.coverPhoto[0].url} className={styles.cover} alt="" /> }
-          
+          {post.coverPhoto && (
+            <img src={post.coverPhoto[0].url} className={styles.cover} alt="" />
+          )}
+
           <div className={styles.title}>
             <div className={styles.authdetails}>
               {/* {post.authorPhoto ? (
@@ -43,7 +45,13 @@ function Blog() {
                 <img src={noProfile} alt="" />
               )} */}
               <div className={styles.authtext}>
-                <h4>{post.author}</h4>
+                <div className={styles.details}>
+                  <h4>{post.author}</h4>
+                  {post.department && (
+                    <div className={styles.tag}>{post.department}</div>
+                  )}
+                  {post.year && <div className={styles.tag}>{post.year}</div>}
+                </div>
                 <h6>{moment(post.date_created).format("MMM d, YYYY")}</h6>
               </div>
             </div>
