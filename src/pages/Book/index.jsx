@@ -15,7 +15,8 @@ function Book() {
 
   useEffect(() => {
     getBook();
-  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const getBook = async () => {
     base("Book").find(`${params.id}`, (err, record) => {

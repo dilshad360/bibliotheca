@@ -17,7 +17,8 @@ function Blog() {
 
   useEffect(() => {
     getPost();
-  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const getPost = async () => {
     base("Blog").find(`${params.id}`, (err, record) => {
@@ -52,7 +53,7 @@ function Blog() {
                   )}
                   {post.year && <div className={styles.tag}>{post.year}</div>}
                 </div>
-                <h6>{moment(post.date_created).format("MMM d, YYYY")}</h6>
+                <h6>{moment(post.date_created).format("MMM D, YYYY")}</h6>
               </div>
             </div>
             <h2>{post.title}</h2>

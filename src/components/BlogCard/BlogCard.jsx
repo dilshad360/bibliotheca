@@ -29,7 +29,7 @@ function BlogCard({ post, id }) {
               <h3>{post.fields.author}</h3>
             </div>
             <div className={styles.date}>
-              <h3>{moment(post.fields.date_created).format("MMM d, YYYY")}</h3>
+              <h3>{moment(post.fields.date_created).format("MMM D, YYYY")}</h3>
             </div>
           </div>
         </div>
